@@ -1,0 +1,28 @@
+{% extends "events/layout.html" %}
+{% load static %}
+
+{% block style %}
+<link href="{% static 'events/help.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+        <h1>Help Page</h1>
+        <p>Welcome to the help page for our events website!</p>
+        <h2>Frequently Asked Questions</h2>
+        <ul>
+            <li>How do I create an account?</li>
+            <li>How do I create an event?</li>
+            <li>How do I edit or delete an event?</li>
+            <li>How do I search for events?</li>
+            <li>How do I contact support?</li>
+        </ul>
+        <h2>Contact Us</h2>
+        <p>If you have any further questions or issues, please don't hesitate to contact us:</p>
+        <ul>
+            <li>Email: support@events.com</li>
+            <li>Phone: 555-1234</li>
+            <li>Address: 123 Main St, Anytown USA</li>
+        </ul>
+{% endblock %}
+
+

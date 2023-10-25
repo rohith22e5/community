@@ -1,0 +1,62 @@
+{% extends "events/layout.html" %}
+{% load static %}
+{% block body %}
+    <div class="card" id="cards"  data-user="{{ user.username }}">
+        <span class="image-container">
+            <img src="{{ event.image.url }}" alt="{{ event.title }}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" class="heart-svg" id="wishlist">
+                <path d="M12 21.35l-1.45-1.32C5.4 16.53 2 13.36 2 10c0-2.76 2.24-5 5-5 2.05 0 3.9.99 5 2.51C12.1 5.99 13.95 5 16 5c2.76 0 5 2.24 5 5 0 3.36-3.4 6.53-8.55 10.03L12 21.35z"  fill="{{ color }}" />
+            </svg>
+        <div class="event-details">
+            <span>
+                <div id="options">
+                    {% csrf_token %}
+                    <div class="card" style="width: 18rem;">
+                        <div>
+                            <label for="ticket_quantity">Select Number of Tickets:</label>
+                            <input type="number" id="ticket_quantity" min="1" max="{{ available_tickets }}" value="1">
+                        </div>
+                        <button id="buy_button" data-id="{{ event.id }}">Reserve Tickets</button>
+                        <p id="ticket_count" data-availabletickets="{{ available_tickets }}">Available Tickets: {{ available_tickets }}</p>
+                    </div>
+                </div>
+            <h3>{{ event.title }}</h3>
+            <div class="label-value-pair">
+                <h5>Date:</h5>
+                <p id="EventDate">{{ event.date }}</p>
+            </div>
+            <div class="label-value-pair">
+                <h5>Location:</h5>
+                <p id="location">{{ event.location }}</p>
+            </div>
+            <div class="label-value-pair">
+                <h5>Ticket Price:</h5>
+                <p id="price">₹{{ event.ticket_price }}/-</p>
+            </div>
+            <div class="label-value-pair">
+                <h5>Category:</h5>
+                <p id="category">{{ event.category }}</p>
+            </div>
+            <div class="label-value-pair">
+                <h5>Duration:</h5>
+                <p id="duration">{{ event.duration }}</p>
+            </div>
+            <div class="label-value-pair">
+                <h5>Club:</h5>
+                <p id="club">{{ event.club }}</p>
+            </div>
+            <div class="label-value-pair">
+                <h5>Description:</h5>
+                <p id="desc">{{ event.description }}</p>
+            </div>
+            </span>
+        </div>
+        </span>
+    </div>
+    <div id="show_cards"></div>
+{% endblock %}
+
+{% block script %}
+<link href="{% static 'events/event.css' %}" rel="stylesheet" >
+<script src="{% static 'events/event.js' %}"></script>
+{% endblock %}

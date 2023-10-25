@@ -1,0 +1,170 @@
+/* event.css (Custom styles for the event page) */
+
+/* Style the card container to cover the whole page */
+#cards {
+    width: 100%;
+    padding: 20px;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Style the card */
+.card {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    text-align: center;
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(213, 206, 206, 0.2);
+}
+
+/* Style the event title */
+.card h2 {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #007bff;
+}
+
+/* Style the image within the card */
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Style event details paragraphs */
+.card p {
+    margin: 5px 0;
+    color: #fff;
+}
+
+/* Style the "Buy Tickets" button */
+#buy_button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#buy_button:hover {
+    background-color: #0056b3;
+}
+
+/* Style the "Show Cards" section */
+#show_cards {
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+}
+
+/* Styling for the "options" division */
+#options {
+    position: relative;
+    float:  right;
+    float: inline-end;
+    max-width: 18rem;
+    color: #fff;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #options {
+        position: static;
+        margin-top: 20px;
+        float: none;
+    }
+}
+
+/* Style the "Add to Cart" and "Buy Now" buttons */
+#options {
+    position: relative;
+    top: 100;
+    left: 100;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    color: #fff;
+
+}
+
+
+
+/* Styles for the options section */
+#options {
+    margin-top: 20px;
+    position: sticky;
+    top: 0; /* Adjust as needed based on the desired position */
+    z-index: 1; /* Add a z-index to ensure it displays above other content */
+ /* Optional background color for visibility */
+}
+
+
+/* Style the "Buy Tickets" button within the "options" division */
+#buy_button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+#buy_button {
+    background-color: #FF5733;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+#buy_button:hover {
+    background-color: #FF4500;
+}
+
+/* wishlist.css (Keep it separate for organization) */
+/* Style the wishlist icon */
+#wishlist {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    border: black solid 1px;
+}
+
+/* Adjust the container's position to accommodate the icon */
+.image-container {
+    position: relative;
+}
+
+/* Add additional styles as needed for your specific design */
+
+/* Customize other styles to match layout.css */
+
+/* Add this CSS to your 'event.css' file */
+.event-details {
+    text-align: left; /* Align details to the left */
+}
+
+.label-value-pair h5 {
+    display: inline; /* Display labels inline with the values */
+    margin-right: 10px; /* Add some space between labels and values */
+}
+

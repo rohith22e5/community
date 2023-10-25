@@ -1,0 +1,56 @@
+{% extends 'events/layout.html' %}
+{% load static %}
+
+
+{% block body %}
+<div class="form-input">
+    <form  action="{% url 'create' %}" method="post" enctype="multipart/form-data" >
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" name="title" id="title" placeholder="Enter event title">
+        </div>
+        <div class="form-group">
+            <label for="ticket_price">Price:</label>
+            <input type="number" class="form-control" name="ticket_price" id="ticket_price" placeholder="Enter price">
+        </div>
+        <div class="form-group">
+            <label for="image">Image file :</label>
+            <input type="file" class="form-control" name="image" id="image" placeholder="Enter image file" accept="image/*" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea class="form-control" name="description" id="description" placeholder="Enter description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <input type="text" class="form-control" name="category" id="category" placeholder="Enter category">
+        </div>
+        <div class="form-group">
+            <label for="date">Event-Date:</label>
+            <input type="datetime" class="form-control" name="date" id="date" placeholder="Enter date">
+        </div>
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" class="form-control" name="location" id="location" placeholder="Enter location">
+        </div>
+        <div class="form-group">
+            <label for="club">Club:</label>
+            <input type="text" class="form-control" name="club" id="club" placeholder="Enter club">
+        </div>
+        <div class="form-group">
+            <label for="duration">Duration:</label>
+            <input type="time" class="form-control" name="duration" id="duration" placeholder="Enter Duration">
+        </div>
+        <div class="form-group">
+            <label for="tickets">Tickets:</label>
+            <input type="text" class="form-control" name="tickets" id="tickets" placeholder="Enter category">
+        </div>
+        <input type="submit" class="btn btn-primary" value="Add Event">
+       </form>
+
+
+</div>
+
+{% endblock %}

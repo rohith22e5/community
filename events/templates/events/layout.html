@@ -1,0 +1,96 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-1.png' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="{% static 'events/layout.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/css/pikaday.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/pikaday.min.js"></script>
+    <script src="{% static 'events/layout.js' %}"></script>
+    {% block style %}
+    {% endblock %}
+    {% block script %}
+    {% endblock %}
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container">
+            <a href="/" class="navbar-brand">
+                <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">🏠Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'categories' %}">Find Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'create' %}">Create Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'help' %}">Help Center</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link" id="time">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16" id="calender">
+                                <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                            </svg>
+                            <div class="input-group date" id="datetimepicker1" data-target-input="nearest"  >
+                                {% csrf_token %}
+                                <input type="text" id="datepicker" >
+                                <i class="far fa-calendar" id="calendar-icon" ></i>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+                <div class="ml-auto d-flex">
+                    <form class="form-inline my-2 my-lg-0 mr-3" action="{% url 'search' %}"  method="post" >
+                        {% csrf_token %}
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="query" >
+                    </form>
+                    {% if user.is_authenticated %}
+                    <ul class="navbar-nav">
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'wishlist' %}">❤️Wishlist</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'Account' %}">😎Account</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                    </ul>
+                    {% else %}
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Sign up</a></li>
+                    </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container" id="container">
+        <h2>Events🧾</h2>
+        {% block body %}
+        {% endblock %}
+    </div>
+    <div id="showwcards">
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const element=document.getElementById("datetimepicker1");
+        element.style.display="none";  
+    </script>
+    
+</body>
+</html>
+
+

@@ -1,0 +1,28 @@
+{% extends "events/layout.html" %}
+{% load static %}
+
+{% block style %}
+<link href="{% static 'events/index.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+        {% if user.is_authenticated %}
+            <p>Welcome, {{ user.username }}. You are logged in.</p>
+        {% endif %}
+        <div class="card" id="cards">
+            {% for event in events %}
+            <div class="card_body"   data-name="{{ event.title }}"  data-custom-property1="{{ event.description }}" data-custom-property2="{{ event.category }}" data-custom-property3="{{ event.date }}" >
+                <h3>{{ event.title }}</h3>
+                <span>
+                    <img src="{{ event.image.url }}" alt="{{ event.title }}">
+                </span>
+                <p>Ticket Price: ₹{{ event.ticket_price }}/-</p>
+                <p>Club: {{ event.club }}</p>
+            
+                <a href="{% url 'event' event.id %}"  class="btn btn-primary" >View</a>
+            </div>
+            {% endfor %}
+        </div>
+        <div id="show_cards">  
+        </div>
+{% endblock %}

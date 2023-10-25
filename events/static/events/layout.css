@@ -1,0 +1,128 @@
+/* layout.css (Add these styles at the end of your existing CSS) */
+
+/* Change the body background to dark */
+body {
+    background-color: #333;
+    color: white;/* Text color */
+}
+
+/* Customize the navigation bar */
+.navbar {
+    background-color: #333; /* Dark background color */
+    color: #fff; /* Text color */
+}
+
+.navbar-brand {
+    color: #007bff; /* Brand link color */
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #fff; /* Nav link color */
+}
+
+.navbar-nav .nav-item active .nav-link {
+    color: rgb(219, 208, 208); /* Nav link color */
+}
+
+/* Style the active class 
+.active {
+    background-color: #007bff;
+    color: #fff;
+}
+*/
+
+/* Style the inactive class 
+.inactive {
+    background-color: #f8f9fa;
+    color: #333;
+}*/
+/* Change the link colors on hover */
+.navbar-nav .nav-item .nav-link:hover {
+    color: #007bff; /* Link color on hover */
+}
+
+/* Darken the search input field */
+.form-control {
+    background-color: #444; /* Darker input field background */
+    color: #fff; /* Text color inside the input field */
+    border: 1px solid #007bff; /* Border color */
+}
+
+/* Customize the "Login" and "Sign up" links */
+.navbar-nav .nav-link[href*="login"],
+.navbar-nav .nav-link[href*="register"] {
+    color: #007bff; /* Link color */
+}
+
+/* Darken the container background */
+.container {
+    background-color: #333; /* Dark container background */
+    padding: 20px; /* Add some padding to the container */
+}
+
+/* Customize the header text */
+h2 {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+#datepicker {
+    background-color: #444; /* Darker input field background */
+    color: #fff; /* Text color inside the input field */
+    border: 1px solid #007bff; /* Border color */
+    padding-left:37% ; 
+    width: max-content; 
+    align-content: center;
+     position: relative;
+}
+
+
+/* Example: Override CSS classes based on your inspection */
+.pika-single {
+    background-color: black;
+    color: white;
+  }
+
+
+  
+  /* Additional CSS classes may need to be overridden */
+  
+  
+
+
+/* Reset some default browser styles 
+body, h2, p {
+    margin: 0;
+    padding: 0;
+}
+*/
+
+/* Style the header 
+h2 {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+*/
+
+/* Style the navigation bar 
+.navbar {
+    background-color: #f8f9fa;
+    padding: 10px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0 10px;
+}
+*/

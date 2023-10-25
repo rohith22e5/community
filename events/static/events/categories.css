@@ -1,0 +1,23 @@
+/* Apply styles to the iconCategoryCard */
+.iconCategoryCard {
+    background-color: #f0f0f0; /* Set the background color */
+    border: 1px solid #ccc; /* Add a border */
+    padding: 10px; /* Add some padding */
+    margin: 10px; /* Add margin to separate the cards */
+    text-align: center; /* Center the card contents */
+  }
+  
+  /* Style the iconCategoryCardTitle */
+  .iconCategoryCardTitle {
+    font-size: 18px; /* Set the font size */
+    font-weight: bold; /* Make the text bold */
+    color: #333; /* Set the text color */
+  }
+  
+  /* Style the SVG icon */
+  .iconCategoryCardImageWrapper svg {
+    width: 40px; /* Set the width of the SVG icon */
+    height: 40px; /* Set the height of the SVG icon */
+    fill: #333; /* Set the fill color of the SVG icon */
+  }
+  
